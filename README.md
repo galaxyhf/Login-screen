@@ -1,73 +1,90 @@
-# React + TypeScript + Vite
+# Login Screen
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Tela de login simples desenvolvida com **React**, **TypeScript** e **Vite**, servindo como base para projetos modernos com autenticação.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Visão Geral
 
-## React Compiler
+Este projeto foi criado para demonstrar uma tela de login funcional e estilizada, utilizando boas práticas e uma estrutura organizada.  
+Ideal para iniciar aplicações com autenticação de usuário.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Tecnologias Utilizadas
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React**
+- **TypeScript**
+- **Vite**
+- **TailwindCSS**
+- **React Router DOM** (para navegação)
+- **React Hot Toast** (para notificações, se configurado)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Estrutura do Projeto
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+Login-screen/
+├─ public/
+├─ src/
+│  ├─ assets/
+│  ├─ components/
+│  ├─ pages/
+│  │   └─ Login.tsx
+│  ├─ routes/
+│  ├─ App.tsx
+│  └─ main.tsx
+├─ package.json
+├─ tsconfig.json
+├─ tailwind.config.js
+└─ vite.config.ts
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Como Executar
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1. **Clonar o repositório**
+   ```bash
+   git clone https://github.com/galaxyhf/Login-screen.git
+   cd Login-screen
+   ```
+
+2. **Instalar dependências**
+   ```bash
+   npm install
+   ```
+
+3. **Executar o servidor de desenvolvimento**
+   ```bash
+   npm run dev
+   ```
+
+4. **Abrir no navegador**
+   ```
+   http://localhost:5173
+   ```
+
+---
+
+## Funcionalidades
+
+- Formulário de login com campos de e-mail e senha  
+- Validação básica dos campos  
+- Feedback visual de erros ou sucesso  
+- Layout moderno e responsivo  
+- Estrutura pronta para expansão (ex: dashboard, autenticação real)
+
+---
+
+## Licença
+
+Este projeto está sob a licença **MIT**.  
+Sinta-se à vontade para usar, modificar e distribuir conforme necessário.
+
+---
+
+## Autor
+
+Feito com 💙 por [@galaxyhf](https://github.com/galaxyhf)
