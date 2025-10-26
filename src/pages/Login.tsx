@@ -23,7 +23,7 @@ const Login = () => {
       if (email && password.length >= 6) {
         toast.success("Login realizado com sucesso!");
         setTimeout(() => {
-          navigate("/dashboard");
+          navigate("");
         }, 500);
       } else {
         toast.error("Credenciais inválidas!");
