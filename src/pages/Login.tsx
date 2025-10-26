@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import { HiOutlineChartBar } from "react-icons/hi2";
 
@@ -9,6 +9,7 @@ const Login = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -21,7 +22,9 @@ const Login = () => {
       // Validação básica
       if (email && password.length >= 6) {
         toast.success("Login realizado com sucesso!");
-        // navigate('/dashboard'); // Descomente quando tiver a rota do dashboard
+        setTimeout(() => {
+          navigate("/dashboard");
+        }, 500);
       } else {
         toast.error("Credenciais inválidas!");
       }
@@ -162,7 +165,9 @@ const Login = () => {
                   )}
                 </div>
               </div>
-              <span className="ml-2 text-sm text-gray-600 select-none">Lembrar-me</span>
+              <span className="ml-2 text-sm text-gray-600 select-none">
+                Lembrar-me
+              </span>
             </label>
             <Link
               to="/forgot-password"
